@@ -1,0 +1,13 @@
+<div class="avenger-list">
+    <app-avenger
+        class="avenger-list__avenger"
+        *ngFor="let avenger of avengers"
+        [avenger]="avenger"
+        (onActiveAvenger)="activeAvenger(avenger)"
+    ></app-avenger>
+</div>
+<div class="list-info">
+    <span class="list-info__span" *ngIf="avengersActives === 0">No hay elementos activos en la lista</span>        
+    <span class="list-info__span" *ngIf="avengersActives !== 0">Hay <span class="list-info__span--number">{{avengersActives}}</span> elementos activos en la lista</span>        
+</div>
+<!-- Por qué tengo que pasarle el objeto en lugar de la propiedad en activeAvenger?? -->
